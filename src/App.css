@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--country-card-bcc: #CDCDCD;
+	--text-color: #232323;
+	--body-bcc: #EFEFEF;
+	--font-family: 'Bitter', serif;
+}
+
+[data-theme = 'dark'] {
+	--country-card-bcc: #323232;
+	--text-color: #EFEFEF;
+	--body-bcc: #121212;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow-x: hidden;
+	font-family: var(--font-family);
+	background-color: var(--body-bcc);
+	color: var(--text-color);
+}
+
+a { text-decoration: none; color: var(--text-color); }
+button { font-family: var(--font-family); }
+
+.app {
+	width: 100%;
+	padding: 2rem;
+	background-color: var(--body-bcc);
+	min-height: 100vh;
+}
+
+.title {
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	color: var(--text-color);
+}
+
+.loading {
+	font-size: 2.5rem;
+	color: var(--text-color);
+	text-align: center;
+}
+
+.not-found {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.countries {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.country {
+	background-color: var(--country-card-bcc);
+	flex: 1 1 auto;
+	border-radius: 6px;
+	padding-bottom: 1rem;
+	max-width: 500px;
+}
+
+.country div {
+	padding: 0.75rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+	border-radius: 0 0 6px 6px;
+}
+
+.country img {
+	width: 100%;
+	height: 200px;
+	border-radius: 6px 6px 0 0;
+}
+
+.country-name {
+	font-size: 1.5rem;
+}
+
+.country-population {
+	font-size: 1.25rem;
+}
+
+.country-capital {
+	font-size: 1.5rem;
+	padding: 0 0.75rem 0 0.75rem;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.search-country {
+	display: flex;
+	align-items: stretch;
+	justify-content: flex-start;
+	gap: 1rem;
+}
+
+.search-country input {
+	padding: 0.5rem;
+	border-radius: 4px;
+	border: 1px solid var(--text-color);
+	outline: none;
+	font-size: 1.25rem;
+	font-family: var(--font-family);
+	background-color: var(--body-bcc);
+	color: var(--text-color);
+}
+
+.search-btn {
+	font-size: 1.25rem;
+	font-weight: 600;
+	font-family: var(--font-family);
+	padding: 0 1rem;
+	border-radius: 4px;
+	border: none;
+	outline: none;
+	background-color: var(--country-card-bcc);
+	color: var(--text-color);
+	transition: all 0.1s ease-in-out;
+	cursor: pointer;
+	width: 100px;
+}
+
+.search-btn:hover {
+	font-size: 1.3rem;
+}
+
+/* -------------------------------------------------------------- */
+
+.continent-info {
+	color: var(--text-color);
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+/* ----------------------------------------------------------------- */
+
+.controls {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	margin-bottom: 2rem;
+}
+
+.sorting, .continents {
+	font-size: 1.5rem;
+	color: var(--text-color);
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	height: 100%;
+}
+
+.sorting select, .continents select {
+	width: fit-content;
+	height: 100%;
+	padding: 0 0.5rem 0 1rem;
+	font-size: 1.25rem;
+	font-weight: 600;
+	background-color: var(--country-card-bcc);
+	color: var(--text-color);
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* ----------------------------------------------------------- */
+
+.details {
+	display: flex;
+	align-items: stretch;
+	background-color: var(--country-card-bcc);
+	width: 1024px;
+	margin: 0 auto;
+	border-radius: 6px;
+}
+
+.details_content {
+	align-self: flex-start;
+	justify-self: flex-start;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	flex-basis: 45%;
+	height: 100%;
+	position: relative;
+}
+
+.un-badge {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	width: 64px;
+}
+
+.details_flag {
+	display: flex;
+	flex-basis: 55%;
+}
+
+.details_flag img {
+	border-radius: 6px 0 0 6px;
+}
+
+.details_name {
+	color: var(--text-color);
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.country-name_details {
+	font-size: 2rem;
+	color: var(--text-color);
+}
+
+.capital_details,
+.population_details,
+.region_details, 
+.currencies_details,
+.subregion_details,
+.area_details,
+.timezones {
+	color: var(--text-color);
+	font-size: 1.5rem;
+	padding-right: 3rem;
+}
+
+.timezones {
+	list-style-type: decimal;
+}
+
+.currency-content, .zone {
+	color: var(--text-color);
+	font-size: 1.25rem;
+	margin-left: 1rem;
+}
+
+.zone {
+	margin-left: 1rem;
+	display: inline;
+	word-break: break-all;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+.dark-mode-switch {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	float: inline-end;
+	color: var(--text-color);
+	font-size: 1.25rem;
+}
+
+.switch-icons {
+	font-size: 28px;
+	color: var(--accent);
+	transition: all .2s ease-in-out;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #323232;
+	border-radius: 34px;
+	transition: all .2s ease-in-out;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #EFEFEF;
+	border-radius: 50%;
+	transition: all .2s ease-in-out;
+}
+
+input:checked + .slider {
+	background-color: #fff;
+}
+
+input:checked + .slider:before {
+	transform: translateX(26px);
+	background-color: #323232;
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+/* --------------------------------------------------------------------- */
+
+.back-btn {
+	width: 150px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	font-size: 2rem;
+	outline: none;
+	border-radius: 6px;
+	border: none;
+	font-family: var(--font-family);
+	font-weight: 600;
+	margin-top: 2rem;
+	background-color: var(--country-card-bcc);
+	color: var(--text-color);
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.1s ease-in-out;
+}
+
+.back-btn:hover {
+	font-size: 2.1rem;
+}
