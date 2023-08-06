@@ -29,10 +29,6 @@ const Home = (props) => {
 		fetchContries();
 	}, [])
 
-
-
-
-
 	const handleSearch = (e) => {
 		e.preventDefault();
 
@@ -44,11 +40,6 @@ const Home = (props) => {
 		setSearch('');
 		setBack(true);
 	};
-
-
-
-
-
 
 	const sort = () => {
 		const sortedCountries = [...countries];
@@ -77,11 +68,6 @@ const Home = (props) => {
 	useEffect(() => {
 		sort();
 	}, [sortBy]);
-
-
-
-
-
 
 	const filter = () => {
 		let filteredCountries = [...originalCountries];
@@ -139,11 +125,6 @@ const Home = (props) => {
 		filter();
 	}, [continent, originalCountries, sortBy]);
 
-
-
-
-
-
 	const calculateContinentData = () => {
 		let totalPopulation = 0;
 		let numCountries = 0;
@@ -165,11 +146,6 @@ const Home = (props) => {
 	useEffect(() => {
 		calculateContinentData();
 	}, [continent, originalCountries]);
-
-
-
-
-
 
 	return (
 		<>
